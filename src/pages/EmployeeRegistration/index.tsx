@@ -1,31 +1,31 @@
-import axios from "axios";
 import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router";
+
 import api from "../../services/api";
+
 import "./styles.css";
 
 const EmployeeRegistration = () => {
     const [employeeName, setEmployeeName] = useState("");
     const [employeeCpf, setEmployeeCpf] = useState("");
+    const navigate = useNavigate();
 
-    function employeeRegistration(e: FormEvent) {
+
+    async function employeeRegistration(e: FormEvent) {
         e.preventDefault();
-        console.log(employeeName + ":" + typeof employeeName);
-        console.log(employeeCpf + ":" + typeof employeeCpf);
-        api.post("employees", {
+        await api.post("employees", {
             name: employeeName,
             cpf: employeeCpf
         }).then(() => {
-            alert("Cadastro realizado com sucesso")
+            alert("Cadastro realizado com sucesso");
+            navigate("/employees")
         }).catch(() => {
             alert("Erro ao cadastar");
         });
-
-
     }
     return (
         <>
-            <h1>Cadastrar Colaborador</h1>
-
+            <h1>Cadastrar Item para</h1>
             <section>
                 <form onSubmit={employeeRegistration}>
                     <div className="input-block">
@@ -49,12 +49,9 @@ const EmployeeRegistration = () => {
                     <div className="input-block button-container">
                         <input type="submit" id="name" value="Cadastrar" />
                     </div>
-
-
                 </form>
             </section>
         </>
-
     );
 }
 export default EmployeeRegistration;

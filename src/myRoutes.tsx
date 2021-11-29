@@ -3,9 +3,9 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import App from "./App";
 import EmployeeList from "./pages/EmployeeList";
 import EmployeeRegistration from "./pages/EmployeeRegistration";
+import ItemRegistration from "./pages/ItemRegistration";
 
 const MyRoutes = () => {
     return (
@@ -13,8 +13,10 @@ const MyRoutes = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<EmployeeList />} />
+                    <Route path="*" element={<EmployeeList />} />
                     <Route path="/employees" element={<EmployeeList />} />
-                    <Route path="/registration" element={<EmployeeRegistration />} />
+                    <Route path="/itemRegistration/:id" element={<ItemRegistration />} />
+                    <Route path="/employeeRegistration" element={<EmployeeRegistration />} />
                 </Routes>
             </BrowserRouter>
         </>
