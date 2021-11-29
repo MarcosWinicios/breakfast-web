@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import EmployeeItem from "../../components/EmployeeItem";
 import { BASE_URL } from "../../services/request";
+import { EmployeePage } from "../../types/employee";
 import "./styles.css";
 
 interface Item {
@@ -15,56 +16,27 @@ interface Employee {
     items: Item[];
 }
 const EmployeeList = () => {
-    const [novoEmployee, setEmployee] = useState({
-        id: 1,
-        name: "João",
-        cpf: "111.111.141.11",
-        items: [
-            {
-                id: 1,
-                name: "Pão"
-            },
-            {
-                id: 2,
-                name: "Salcicha"
-            },
-            {
-                id: 3,
-                name: "Leite"
-            },
-            {
-                id: 4,
-                name: "Café"
-            },
-        ]
-
-    });
-    const [novoEmployee2, setEmployee2] = useState({
-        id: 2,
-        name: "Pedro",
-        cpf: "111.111.141-41",
-        items: [
-            // {
-            //     id: 1,
-            //     name: "Pão"
-            // },
-        ]
-
+    const [page, setPage] = useState<EmployeePage>({
+        first: true,
+        last: true,
+        number: 0,
+        totalElements: 0,
+        totalPages: 0
     });
 
-    const [employeeList, setEmployeeList] = useState<Employee[]>([]);
-    const [page, setPage] = useState();
     useEffect(() => {
-        const response = axios.get(`${BASE_URL}/employees`);
-        console.log(response)
+        axios.get(`${BASE_URL}/employees`).then(response => {
+            setPage(response.data)
+        })
+
     }, []);
 
     return (
         <>
             <h1>Lista de Colaboradores</h1>
             <ul>
-                {employeeList.map(employee => (
-                    <li key={employee.id}>
+                {page.content?.map(employee => (
+                    <li key={employee.id} >
                         <EmployeeItem employee={employee} />
                     </li>
                 ))}

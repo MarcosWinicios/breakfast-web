@@ -40,8 +40,6 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                             </p>
                         </span>
                     ))}
-
-
                 </div>
             </section >
 
