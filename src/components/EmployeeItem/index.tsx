@@ -29,6 +29,11 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
         })
     }
 
+    function handleDeleteEmployee() {
+        api.delete(`employees/${employee.id}`).then(() => {
+            window.location.reload();
+        })
+    }
     return (
         <>
             <section className="employeeContainer">
@@ -42,6 +47,10 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                         <p id="cpf">{employee.cpf}</p>
                     </div>
                 </div>
+                <button onClick={handleDeleteEmployee}>
+                    Excluir
+                </button>
+
                 <h4>Itens para o café da manhã: </h4>
                 <div className="itemsContainer">
                     {employee.items.map(item => (
