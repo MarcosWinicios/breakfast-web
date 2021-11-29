@@ -5,16 +5,6 @@ import { BASE_URL } from "../../services/request";
 import { EmployeePage } from "../../types/employee";
 import "./styles.css";
 
-interface Item {
-    id: number;
-    name: string;
-}
-interface Employee {
-    id: number;
-    name: string;
-    cpf: string;
-    items: Item[];
-}
 const EmployeeList = () => {
     const [page, setPage] = useState<EmployeePage>({
         first: true,

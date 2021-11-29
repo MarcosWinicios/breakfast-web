@@ -1,0 +1,32 @@
+        .input-block {
+            /* border: solid 1px #ccc; */
+            display: flex;
+            justify-content: space-between;
+            width: 18vw;
+            margin: 15px 0;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 50%;
+            border: solid 1px #ccc;
+            width: 50vw;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .button-container input {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: rgb(93, 252, 93);
+            width: 200px;
+            height: 35px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+        }
