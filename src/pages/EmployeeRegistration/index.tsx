@@ -47,7 +47,12 @@ const EmployeeRegistration = () => {
                         />
                     </div>
                     <div className="input-block button-container">
-                        <input type="submit" id="name" value="Cadastrar" />
+                        <button type="submit">
+                            Cadastrar
+                        </button>
+                        <button onClick={() => navigate("/employees")}>
+                            Cancelar
+                        </button>
                     </div>
                 </form>
             </section>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import EmployeeItem from "../../components/EmployeeItem";
 import { BASE_URL } from "../../services/request";
 import { EmployeePage } from "../../types/employee";
@@ -24,6 +25,9 @@ const EmployeeList = () => {
     return (
         <>
             <h1>Lista de Colaboradores</h1>
+            <Link to="/employeeRegistration">
+                Cadastrar Colaborador
+            </Link>
             <ul>
                 {page.content?.map(employee => (
                     <li key={employee.id} >
