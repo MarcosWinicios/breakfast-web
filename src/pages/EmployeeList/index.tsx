@@ -1,5 +1,7 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import EmployeeItem from "../../components/EmployeeItem";
+import { BASE_URL } from "../../services/request";
 import "./styles.css";
 
 interface Item {
@@ -50,15 +52,23 @@ const EmployeeList = () => {
 
     });
 
+    const [employeeList, setEmployeeList] = useState<Employee[]>([]);
+    const [page, setPage] = useState();
+    useEffect(() => {
+        const response = axios.get(`${BASE_URL}/employees`);
+        console.log(response)
+    }, []);
 
     return (
         <>
-            <EmployeeItem employee={novoEmployee2} />
-            <EmployeeItem employee={novoEmployee} />
-            <EmployeeItem employee={novoEmployee} />
-            <EmployeeItem employee={novoEmployee} />
-            <EmployeeItem employee={novoEmployee} />
-
+            <h1>Lista de Colaboradores</h1>
+            <ul>
+                {employeeList.map(employee => (
+                    <li key={employee.id}>
+                        <EmployeeItem employee={employee} />
+                    </li>
+                ))}
+            </ul>
         </>
     );
 }
