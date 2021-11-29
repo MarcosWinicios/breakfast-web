@@ -1,0 +1,57 @@
+.employeeContainer {
+    border-top: solid 1px #dedede;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 15px;
+}
+
+.employeeContainer:hover {
+    background-color: #f4f4f4;
+}
+
+.personalDataEmployee h3 {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #2b2723;
+}
+
+.employeeContainer h4 {
+    margin: 10px 0;
+    color: #757070;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: solid 1px #ccc; */
+}
+
+.itemsContainer span {
+    margin: 10px 15px 10px 0;
+    font-weight: 500;
+}
+
+.personalDataEmployee {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.field {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    color: #585e69;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 5px;
+    /* border: solid 1px #ccc; */
+}
+
+.field label {
+    color: #43474e;
+    margin-right: 10px;
+}

@@ -1,8 +1,14 @@
+import Employee from "../../components/Employee";
 import "./styles.css";
 
 const EmployeeList = () => {
     return (
-        <h1>EmployeeList</h1>
+        <>
+            <Employee />
+            <Employee />
+            <Employee />
+            <Employee />
+        </>
     );
 }
 
