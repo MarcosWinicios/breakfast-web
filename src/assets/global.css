@@ -29,3 +29,83 @@ body,
     border-radius: 1em;
     margin: 0 6px 5px 0;
 }
+
+.form-popup {
+    /* display: none; */
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 1px #ccc;
+    width: 50vw !important;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1
+}
+
+.form-page input[type=text] {
+    width: 80%;
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.form-container .cancel {
+    background-color: red;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container button {
+    width: 60% !important;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.form-container .input-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 18vw;
+    margin: 15px 0;
+}

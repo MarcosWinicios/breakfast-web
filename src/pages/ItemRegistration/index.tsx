@@ -37,21 +37,30 @@ const ItemRegistration = () => {
     }
     return (
         <>
-            <h1>Cadastrar Item</h1>
+            <h1>Cadastrar Item para</h1>
             <h3>{employeeName}</h3>
-            <section>
+            <section className="form-container form-page">
                 <form onSubmit={itemRegistration}>
                     <div className="input-block">
                         <label htmlFor="name">Nome:</label>
                         <input
                             type="text"
                             id="name"
+                            required
                             value={itemName}
                             onChange={(e) => (setItemName(e.target.value))}
                         />
                     </div>
-                    <div className="input-block button-container">
-                        <input type="submit" id="name" value="Cadastrar" />
+                    <div className="buttons-container">
+                        <button type="submit" className="btn">
+                            Cadastrar
+                        </button>
+                        <button
+                            onClick={() => navigate("/employees")}
+                            className="btn cancel"
+                        >
+                            Cancelar
+                        </button>
                     </div>
                 </form>
             </section>

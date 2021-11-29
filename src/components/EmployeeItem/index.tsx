@@ -30,7 +30,6 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
     }
 
     function handleDeleteItem(itemId: number) {
-        alert(itemId)
         api.delete(`items/${itemId}`).then(() => {
             window.location.reload();
         })

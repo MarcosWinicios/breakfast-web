@@ -10,7 +10,6 @@ const EmployeeRegistration = () => {
     const [employeeCpf, setEmployeeCpf] = useState("");
     const navigate = useNavigate();
 
-
     async function employeeRegistration(e: FormEvent) {
         e.preventDefault();
         await api.post("employees", {
@@ -25,14 +24,15 @@ const EmployeeRegistration = () => {
     }
     return (
         <>
-            <h1>Cadastrar Item para</h1>
-            <section>
+            <h1>Cadastrar Colaborador</h1>
+            <section className="form-container form-page">
                 <form onSubmit={employeeRegistration}>
                     <div className="input-block">
-                        <label htmlFor="name">Name:</label>
+                        <label htmlFor="name">Nome:</label>
                         <input
                             type="text"
                             id="name"
+                            required
                             value={employeeName}
                             onChange={(e) => (setEmployeeName(e.target.value))}
                         />
@@ -42,15 +42,19 @@ const EmployeeRegistration = () => {
                         <input
                             type="text"
                             id="cpf"
+                            required
                             value={employeeCpf}
                             onChange={(e) => (setEmployeeCpf(e.target.value))}
                         />
                     </div>
-                    <div className="input-block button-container">
-                        <button type="submit">
+                    <div className="buttons-container">
+                        <button type="submit" className="btn">
                             Cadastrar
                         </button>
-                        <button onClick={() => navigate("/employees")}>
+                        <button
+                            onClick={() => navigate("/employees")}
+                            className="btn cancel"
+                        >
                             Cancelar
                         </button>
                     </div>

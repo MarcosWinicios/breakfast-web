@@ -40,6 +40,7 @@ const EmployeePopup = ({ employee, closePopup }: propsPopup) => {
                     onChange={(event) => (setEmployeeName(event.target.value))}
                     required
                 />
+                <label htmlFor="name">CPF</label>
                 <input
                     type="text"
                     id="cpf"
