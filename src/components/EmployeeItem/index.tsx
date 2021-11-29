@@ -48,7 +48,7 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                     <div className="informations">
                         <h3>{employee.name}</h3>
 
-                        <div className="field">
+                        <div className="informations-item-container">
                             <label htmlFor="cpf">
                                 CPF:
                             </label>
@@ -67,14 +67,6 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                     </div>
                 </div>
 
-
-                {/* <button className="btn" onClick={openEmployeePopup}>
-                    Editar
-                </button>
-                <button onClick={handleDeleteEmployee}>
-                    Excluir
-                </button> */}
-
                 <h4>Itens para o café da manhã: </h4>
                 <div className="itemsContainer">
                     {employee.items.map(item => (
@@ -83,14 +75,17 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                                 <p>
                                     {item.name}
                                 </p>
-                                <MdEdit
-                                    onClick={() => openItemPopup(item)}
-                                    size={20}
-                                />
-                                <MdDelete
-                                    onClick={() => { handleDeleteItem(item.id) }}
-                                    size={20}
-                                />
+                                <div className="tag-icons-container">
+                                    <MdEdit
+                                        onClick={() => openItemPopup(item)}
+                                        size={20}
+                                    />
+                                    <MdDelete
+                                        onClick={() => { handleDeleteItem(item.id) }}
+                                        size={20}
+                                    />
+                                </div>
+
                             </span>
                         </>
                     ))}
