@@ -10,7 +10,7 @@ interface propsPopup {
     employee: Employee,
     closePopup: Function
 }
-const ItemPopPup = ({ id, itemName, employee, closePopup }: propsPopup) => {
+const ItemPopup = ({ id, itemName, employee, closePopup }: propsPopup) => {
     const [newName, setNewName] = useState(itemName);
 
     async function handleSubmit(event: FormEvent) {
@@ -63,4 +63,4 @@ const ItemPopPup = ({ id, itemName, employee, closePopup }: propsPopup) => {
     );
 }
 
-export default ItemPopPup;
+export default ItemPopup;

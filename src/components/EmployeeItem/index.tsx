@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import api from "../../services/api";
 import { Employee } from "../../types/employee";
 import { Item } from "../../types/item";
-import ItemPopPup from "../ItemPopUp";
+import EmployeePopup from "../EmployeePopup ";
+import ItemPopup from "../ItemPopup";
 
 import "./styles.css";
 
@@ -11,15 +12,21 @@ interface EmployeeProps {
     employee: Employee
 }
 const EmployeeItem = ({ employee }: EmployeeProps) => {
-    const [showPopup, setShowpopup] = useState(false);
+    const [showItemPopup, setShowItemPopup] = useState(false);
+    const [showEmployeePopup, setShowEmployeePopup] = useState(false);
+
     const [currentItem, setCurrentItem] = useState<Item>({
         id: 0,
         name: ""
     });
 
-    function openPopup(item: Item) {
+    function openItemPopup(item: Item) {
         setCurrentItem(item);
-        setShowpopup(!showPopup);
+        setShowItemPopup(!showItemPopup);
+    }
+
+    function openEmployeePopup() {
+        setShowEmployeePopup(!showEmployeePopup)
     }
 
     function handleDeleteItem(itemId: number) {
@@ -47,6 +54,9 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                         <p id="cpf">{employee.cpf}</p>
                     </div>
                 </div>
+                <button onClick={openEmployeePopup}>
+                    Editar
+                </button>
                 <button onClick={handleDeleteEmployee}>
                     Excluir
                 </button>
@@ -59,7 +69,7 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                                 <p>
                                     {item.name}
                                 </p>
-                                <button onClick={() => openPopup(item)}>
+                                <button onClick={() => openItemPopup(item)}>
                                     edit
                                 </button>
                                 <button onClick={() => { handleDeleteItem(item.id) }}>
@@ -71,18 +81,24 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                 </div>
 
                 {
-                    showPopup && (
-                        <ItemPopPup
+                    showItemPopup && (
+                        <ItemPopup
                             id={currentItem?.id}
                             itemName={currentItem?.name}
                             employee={employee}
-                            closePopup={setShowpopup}
+                            closePopup={setShowItemPopup}
                         />
                     )
                 }
-
+                {
+                    showEmployeePopup && (
+                        <EmployeePopup
+                            employee={employee}
+                            closePopup={setShowEmployeePopup}
+                        />
+                    )
+                }
                 <div className="buttons">
-
                     <Link to={`/itemRegistration/${employee.id}`}>
                         Cadastrar Item
                     </Link>
