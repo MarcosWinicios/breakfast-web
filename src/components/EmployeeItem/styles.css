@@ -1,4 +1,4 @@
-.employeeContainer {
+.employee-container {
     border-top: solid 1px #dedede;
     display: flex;
     flex-direction: column;
@@ -6,17 +6,17 @@
     padding: 15px;
 }
 
-.employeeContainer:hover {
+.employee-container:hover {
     background-color: #f4f4f4;
 }
 
-.personalDataEmployee h3 {
+.informations h3 {
     font-weight: 700;
     font-size: 1.6rem;
     color: #2b2723;
 }
 
-.employeeContainer h4 {
+.employee-container h4 {
     margin: 10px 0;
     color: #757070;
 }
@@ -32,7 +32,7 @@
     font-weight: 500;
 }
 
-.personalDataEmployee {
+.informations {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,4 +54,24 @@
 .field label {
     color: #43474e;
     margin-right: 10px;
+}
+
+.employee-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 80px;
+    padding: 3px;
+    margin-right: 25px;
+}
+
+.employee-buttons-container>* {}
+
+.personal-data-employee-container {
+    display: flex;
+    width: 100%;
+    /* border: solid 1px #ccc; */
+    justify-content: space-between;
+    border-bottom: solid 1px #d1cfce;
 }

@@ -43,25 +43,31 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
     }
     return (
         <>
-            <section className="employeeContainer">
-                <div className="personalDataEmployee">
-                    <h3>{employee.name}</h3>
+            <section className="employee-container">
+                <div className="personal-data-employee-container">
+                    <div className="informations">
+                        <h3>{employee.name}</h3>
 
-                    <div className="field">
-                        <label htmlFor="cpf">
-                            CPF:
-                        </label>
-                        <p id="cpf">{employee.cpf}</p>
+                        <div className="field">
+                            <label htmlFor="cpf">
+                                CPF:
+                            </label>
+                            <p id="cpf">{employee.cpf}</p>
+                        </div>
+                    </div>
+                    <div className="employee-buttons-container">
+                        <MdEdit
+                            onClick={openEmployeePopup}
+                            size={30}
+                        />
+                        <MdDelete
+                            onClick={handleDeleteEmployee}
+                            size={30}
+                        />
                     </div>
                 </div>
-                <MdEdit
-                    onClick={openEmployeePopup}
-                    size={30}
-                />
-                <MdDelete
-                    onClick={handleDeleteEmployee}
-                    size={30}
-                />
+
+
                 {/* <button className="btn" onClick={openEmployeePopup}>
                     Editar
                 </button>
