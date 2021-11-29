@@ -22,8 +22,9 @@ const ItemPopPup = ({ id, itemName, employee, closePopup }: propsPopup) => {
             }
         }
         ).then(() => {
-            alert("Alteração realizada com sucesso")
             closePopup(false);
+            alert("Alteração realizada com sucesso")
+            window.location.reload();
         }).catch(() => {
             alert("Não possível realizar esta operação")
         })

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import api from "../../services/api";
 import { Employee } from "../../types/employee";
 import { Item } from "../../types/item";
 import ItemPopPup from "../ItemPopUp";
@@ -19,6 +20,13 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
     function openPopup(item: Item) {
         setCurrentItem(item);
         setShowpopup(!showPopup);
+    }
+
+    function handleDeleteItem(itemId: number) {
+        alert(itemId)
+        api.delete(`items/${itemId}`).then(() => {
+            window.location.reload();
+        })
     }
 
     return (
@@ -44,6 +52,9 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                                 </p>
                                 <button onClick={() => openPopup(item)}>
                                     edit
+                                </button>
+                                <button onClick={() => { handleDeleteItem(item.id) }}>
+                                    excluir
                                 </button>
                             </span>
                         </>
