@@ -5,6 +5,7 @@ import { Employee } from "../../types/employee";
 import { Item } from "../../types/item";
 import EmployeePopup from "../EmployeePopup ";
 import ItemPopup from "../ItemPopup";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 import "./styles.css";
 
@@ -53,12 +54,20 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                         <p id="cpf">{employee.cpf}</p>
                     </div>
                 </div>
-                <button onClick={openEmployeePopup}>
+                <MdEdit
+                    onClick={openEmployeePopup}
+                    size={30}
+                />
+                <MdDelete
+                    onClick={handleDeleteEmployee}
+                    size={30}
+                />
+                {/* <button className="btn" onClick={openEmployeePopup}>
                     Editar
                 </button>
                 <button onClick={handleDeleteEmployee}>
                     Excluir
-                </button>
+                </button> */}
 
                 <h4>Itens para o café da manhã: </h4>
                 <div className="itemsContainer">
@@ -68,12 +77,14 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                                 <p>
                                     {item.name}
                                 </p>
-                                <button onClick={() => openItemPopup(item)}>
-                                    edit
-                                </button>
-                                <button onClick={() => { handleDeleteItem(item.id) }}>
-                                    excluir
-                                </button>
+                                <MdEdit
+                                    onClick={() => openItemPopup(item)}
+                                    size={20}
+                                />
+                                <MdDelete
+                                    onClick={() => { handleDeleteItem(item.id) }}
+                                    size={20}
+                                />
                             </span>
                         </>
                     ))}

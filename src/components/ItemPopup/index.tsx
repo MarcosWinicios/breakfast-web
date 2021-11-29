@@ -3,7 +3,7 @@ import api from "../../services/api";
 import { Employee } from "../../types/employee";
 
 
-import "./styles.css";
+
 interface propsPopup {
     id: number,
     itemName: string,

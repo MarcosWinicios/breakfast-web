@@ -2,8 +2,6 @@ import { FormEvent, useState } from "react";
 import api from "../../services/api";
 import { Employee } from "../../types/employee";
 
-
-import "./styles.css";
 interface propsPopup {
     employee: Employee,
     closePopup: Function
