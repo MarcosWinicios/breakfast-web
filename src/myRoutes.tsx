@@ -3,6 +3,7 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import Header from "./components/Header";
 import EmployeeList from "./pages/EmployeeList";
 import EmployeeRegistration from "./pages/EmployeeRegistration";
 import ItemRegistration from "./pages/ItemRegistration";
@@ -11,6 +12,7 @@ const MyRoutes = () => {
     return (
         <>
             <BrowserRouter>
+                <Header />
                 <Routes>
                     <Route path="/" element={<EmployeeList />} />
                     <Route path="*" element={<EmployeeList />} />

@@ -1,0 +1,29 @@
+header {
+    box-shadow: var(--color-dark-box-shawdow) 5px 5px 25px;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    background-color: var(--background-secudary-collor);
+    justify-content: center;
+    align-items: center;
+    top: 0 !important;
+    position: fixed;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 10px 0 10px 0;
+    width: 50%;
+}
+
+header nav>* {
+    color: #363535;
+    opacity: 0.8;
+}
+
+header nav>*:hover {
+    opacity: 1;
+}

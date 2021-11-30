@@ -24,17 +24,22 @@ const EmployeeList = () => {
 
     return (
         <>
-            <h1>Lista de Colaboradores</h1>
-            <Link to="/employeeRegistration">
-                Cadastrar Colaborador
-            </Link>
-            <ul>
-                {page.content?.map(employee => (
-                    <li key={employee.id} >
-                        <EmployeeItem employee={employee} />
-                    </li>
-                ))}
-            </ul>
+            <main>
+                <div className="list-header-cotainer">
+                    <h1>Lista de Colaboradores</h1>
+                </div>
+                <section className="data-list-container">
+                    <ul className="data-list">
+                        {page.content?.map(employee => (
+                            <li key={employee.id} >
+                                <EmployeeItem employee={employee} />
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+            </main>
+
         </>
     );
 }

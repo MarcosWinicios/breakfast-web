@@ -16,6 +16,16 @@ body,
     background-color: var(--background-main-collor);
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
 }
 
 .tag {
@@ -38,44 +48,63 @@ body,
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    /* padding: 3px; */
     margin-left: 15px;
-    /* border: 3px solid #973333; */
-}
-
-.form-popup {
-    /* display: none; */
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
 }
 
 .form-container {
-    max-width: 300px;
+    min-width: 300px;
+    max-width: 70vw;
+    min-height: fit-content;
     padding: 10px;
     background-color: white;
+    border: solid 1px #b6b6b6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.form-page {
+.form-popup {
+    position: fixed;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+main {
+    margin-top: 80px;
+}
+
+.link-icons {
+    opacity: 0.6;
+}
+
+.link-icons:hover {
+    cursor: pointer;
+    opacity: 1
+}
+
+.form-page {
+    /* margin-top: 50px; */
     border: solid 1px #ccc;
-    width: 50vw !important;
 }
 
 .form-container input[type=text] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
-    border: none;
+    border: solid 1px #ccc;
     background: #f1f1f1
 }
 
-.form-page input[type=text] {
-    width: 80%;
+.form-container form {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form-container input[type=text]:focus,
@@ -107,6 +136,7 @@ body,
 .buttons-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .button-container button {
@@ -119,6 +149,6 @@ body,
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 18vw;
     margin: 15px 0;
+    width: 100%;
 }

@@ -5,7 +5,7 @@ import { Employee } from "../../types/employee";
 import { Item } from "../../types/item";
 import EmployeePopup from "../EmployeePopup ";
 import ItemPopup from "../ItemPopup";
-import { MdDelete, MdEdit } from "react-icons/md";
+import { MdAdd, MdDelete, MdEdit } from "react-icons/md";
 
 import "./styles.css";
 
@@ -57,38 +57,61 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                     </div>
                     <div className="employee-buttons-container">
                         <MdEdit
+                            className="link-icons"
                             onClick={openEmployeePopup}
                             size={30}
+                            color="gray"
                         />
                         <MdDelete
+                            className="link-icons"
                             onClick={handleDeleteEmployee}
                             size={30}
+                            color="red"
                         />
                     </div>
                 </div>
 
                 <h4>Itens para o café da manhã: </h4>
-                <div className="itemsContainer">
-                    {employee.items.map(item => (
-                        <>
-                            <span className="tag" key={item.id}>
-                                <p>
-                                    {item.name}
-                                </p>
-                                <div className="tag-icons-container">
-                                    <MdEdit
-                                        onClick={() => openItemPopup(item)}
-                                        size={20}
-                                    />
-                                    <MdDelete
-                                        onClick={() => { handleDeleteItem(item.id) }}
-                                        size={20}
-                                    />
-                                </div>
+                <div className="items-container">
+                    <ul>
+                        {employee.items.map(item => (
+                            <li key={item.id}>
+                                <span className="tag">
+                                    <p>
+                                        {item.name}
+                                    </p>
+                                    <div className="tag-icons-container">
+                                        <MdEdit
+                                            onClick={() => openItemPopup(item)}
+                                            size={20}
+                                            className="link-icons"
+                                            color="gray"
+                                        />
+                                        <MdDelete
+                                            onClick={() => { handleDeleteItem(item.id) }}
+                                            size={20}
+                                            className="link-icons"
+                                            color="red"
+                                        />
+                                    </div>
 
-                            </span>
-                        </>
-                    ))}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="items-icons-container">
+                        <Link to={`/itemRegistration/${employee.id}`}>
+                            <MdAdd
+                                size={40}
+                                className="link-icons"
+                                color="green"
+                            >
+
+                            </MdAdd>
+                        </Link>
+
+                    </div>
                 </div>
 
                 {
@@ -109,11 +132,6 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                         />
                     )
                 }
-                <div className="buttons">
-                    <Link to={`/itemRegistration/${employee.id}`}>
-                        Cadastrar Item
-                    </Link>
-                </div>
             </section >
         </>
     );

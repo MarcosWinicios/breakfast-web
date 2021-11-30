@@ -37,33 +37,35 @@ const ItemRegistration = () => {
     }
     return (
         <>
-            <h1>Cadastrar Item para</h1>
-            <h3>{employeeName}</h3>
-            <section className="form-container form-page">
-                <form onSubmit={itemRegistration}>
-                    <div className="input-block">
-                        <label htmlFor="name">Nome:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            required
-                            value={itemName}
-                            onChange={(e) => (setItemName(e.target.value))}
-                        />
-                    </div>
-                    <div className="buttons-container">
-                        <button type="submit" className="btn">
-                            Cadastrar
-                        </button>
-                        <button
-                            onClick={() => navigate("/employees")}
-                            className="btn cancel"
-                        >
-                            Cancelar
-                        </button>
-                    </div>
-                </form>
-            </section>
+            <main>
+
+                <section className="form-container form-page">
+                    <h1>Cadastrar Item para {employeeName}</h1>
+                    <form onSubmit={itemRegistration}>
+                        <div className="input-block">
+                            <label htmlFor="name">Nome:</label>
+                            <input
+                                type="text"
+                                id="name"
+                                required
+                                value={itemName}
+                                onChange={(e) => (setItemName(e.target.value))}
+                            />
+                        </div>
+                        <div className="buttons-container">
+                            <button type="submit" className="btn">
+                                Cadastrar
+                            </button>
+                            <button
+                                onClick={() => navigate("/employees")}
+                                className="btn cancel"
+                            >
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </main>
         </>
     );
 }

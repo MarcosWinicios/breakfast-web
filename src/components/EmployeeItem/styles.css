@@ -1,8 +1,8 @@
 .employee-container {
-    border-top: solid 2px #adacac;
+    border: solid 2px #adacac;
     display: flex;
     flex-direction: column;
-    width: 60%;
+    min-width: 50vw;
     padding: 15px;
     margin-top: 10px;
 }
@@ -22,13 +22,18 @@
     color: #757070;
 }
 
-.itemsContainer {
-    display: flex;
-    flex-wrap: wrap;
+.items-container {
     /* border: solid 1px #ccc; */
+    display: flex;
+    justify-content: space-between;
 }
 
-.itemsContainer span {
+.items-container ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.items-container span {
     margin: 10px 15px 10px 0;
     font-weight: 500;
 }
@@ -71,5 +76,12 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    border-bottom: solid 1px #d1cfce;
+    border-bottom: solid 1px #5a5756;
+}
+
+.items-icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
 }

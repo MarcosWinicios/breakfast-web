@@ -1,0 +1,15 @@
+.list-header-cotainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-list-container {
+    display: flex;
+    justify-content: center;
+}

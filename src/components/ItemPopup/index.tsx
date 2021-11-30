@@ -33,6 +33,7 @@ const ItemPopup = ({ id, itemName, employee, closePopup }: propsPopup) => {
     return (
 
         <div className="form-popup" id="myForm">
+
             <form onSubmit={handleSubmit} className="form-container">
                 <h1>Editar Item: {itemName}</h1>
                 <label htmlFor="name">Nome</label>
