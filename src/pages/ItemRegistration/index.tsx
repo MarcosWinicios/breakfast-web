@@ -14,7 +14,7 @@ const ItemRegistration = () => {
             const { name } = response.data;
             setEmployeeName(name)
         })
-    }, [])
+    }, [id])
 
     async function itemRegistration(e: FormEvent) {
         e.preventDefault();
