@@ -2,8 +2,6 @@ import { FormEvent, useState } from "react";
 import api from "../../services/api";
 import { Employee } from "../../types/employee";
 
-
-
 interface propsPopup {
     id: number,
     itemName: string,
@@ -32,7 +30,7 @@ const ItemPopup = ({ id, itemName, employee, closePopup }: propsPopup) => {
 
     return (
 
-        <div className="form-popup" id="myForm">
+        <div className="form-popup panel" id="myForm">
 
             <form onSubmit={handleSubmit} className="form-container">
                 <h1>Editar Item: {itemName}</h1>

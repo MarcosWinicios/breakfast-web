@@ -1,6 +1,6 @@
 :root {
-    --background-primary-collor: #FFFFFF;
-    --background-secudary-collor: #F5F8FA;
+    --background-primary-collor: #d8d0d0;
+    --background-secudary-collor: #e8ebee;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
@@ -13,7 +13,7 @@
 html,
 body,
 #root {
-    background-color: var(--background-main-collor);
+    background-color: var(--background-primary-collor);
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
     display: flex;
@@ -28,12 +28,16 @@ li {
     list-style: none;
 }
 
+.panel {
+    box-shadow: #888786 2px 2px 15px;
+    border: solid 1px #7979783b;
+}
+
 .tag {
     box-shadow: 0px 0px 2px rgb(0 0 0 / 30%);
-    background-color: #f4f4f4;
+    background-color: #dfdfdf93;
     color: #222324;
     font-weight: 400;
-    /* min-width: 150px; */
     padding: 6px 15px;
     font-size: 0.9rem;
     border-radius: 1em;
@@ -64,6 +68,11 @@ li {
     align-items: center;
 }
 
+.form-page {
+    margin-top: 50px;
+    border: solid 1px #ccc;
+}
+
 .form-popup {
     position: fixed;
     border: 3px solid #f1f1f1;
@@ -72,24 +81,21 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    top: 20vh;
+    right: 30vw;
 }
 
 main {
-    margin-top: 80px;
+    margin-top: 15vh;
 }
 
 .link-icons {
-    opacity: 0.6;
+    opacity: 1;
 }
 
 .link-icons:hover {
     cursor: pointer;
-    opacity: 1
-}
-
-.form-page {
-    /* margin-top: 50px; */
-    border: solid 1px #ccc;
+    opacity: 0.8
 }
 
 .form-container input[type=text] {

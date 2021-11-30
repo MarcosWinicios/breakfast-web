@@ -26,7 +26,7 @@ const EmployeePopup = ({ employee, closePopup }: propsPopup) => {
     }
 
     return (
-        <div className="form-popup" id="myForm">
+        <div className="form-popup panel" id="myForm">
             <form onSubmit={handleSubmit} className="form-container">
                 <h1>Editar Colaborador: {employee.name}</h1>
                 <label htmlFor="name">Nome</label>

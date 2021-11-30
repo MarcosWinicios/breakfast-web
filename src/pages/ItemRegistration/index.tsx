@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import Header from "../../components/Header";
 import api from "../../services/api";
 
 const ItemRegistration = () => {
@@ -37,9 +38,9 @@ const ItemRegistration = () => {
     }
     return (
         <>
+            <Header />
             <main>
-
-                <section className="form-container form-page">
+                <section className="form-container form-page panel">
                     <h1>Cadastrar Item para {employeeName}</h1>
                     <form onSubmit={itemRegistration}>
                         <div className="input-block">

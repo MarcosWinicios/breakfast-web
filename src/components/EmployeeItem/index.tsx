@@ -43,7 +43,7 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
     }
     return (
         <>
-            <section className="employee-container">
+            <section className="employee-container panel">
                 <div className="personal-data-employee-container">
                     <div className="informations">
                         <h3>{employee.name}</h3>
@@ -76,7 +76,7 @@ const EmployeeItem = ({ employee }: EmployeeProps) => {
                     <ul>
                         {employee.items.map(item => (
                             <li key={item.id}>
-                                <span className="tag">
+                                <span className="tag panel">
                                     <p>
                                         {item.name}
                                     </p>

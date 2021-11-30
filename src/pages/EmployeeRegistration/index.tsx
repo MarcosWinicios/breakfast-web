@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router";
+import Header from "../../components/Header";
 
 import api from "../../services/api";
 
@@ -22,9 +23,9 @@ const EmployeeRegistration = () => {
     }
     return (
         <>
-            <main>
-
-                <section className="form-container form-page">
+            <Header />
+            <main >
+                <section className="form-container panel form-page">
                     <h1>Cadastrar Colaborador</h1>
                     <form onSubmit={employeeRegistration}>
                         <div className="input-block">

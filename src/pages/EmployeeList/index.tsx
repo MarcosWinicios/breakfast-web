@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import EmployeeItem from "../../components/EmployeeItem";
+import Header from "../../components/Header";
 import { BASE_URL } from "../../services/request";
 import { EmployeePage } from "../../types/employee";
 import "./styles.css";
@@ -24,6 +24,7 @@ const EmployeeList = () => {
 
     return (
         <>
+            <Header />
             <main>
                 <div className="list-header-cotainer">
                     <h1>Lista de Colaboradores</h1>
