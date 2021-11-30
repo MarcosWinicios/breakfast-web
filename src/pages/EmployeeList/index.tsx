@@ -27,7 +27,7 @@ const EmployeeList = () => {
             <Header />
             <main>
                 <div className="list-header-cotainer">
-                    <h1>Lista de Colaboradores</h1>
+                    <h1>Lista de Colaboradores do café da manhã</h1>
                 </div>
                 <section className="data-list-container">
                     <ul className="data-list">
